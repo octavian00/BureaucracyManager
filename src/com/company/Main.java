@@ -1,20 +1,30 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
-public class Main {
-
+public class Main extends Thread{
+//    private  static HashMap<String, List<String>> listHashMap =new HashMap<>();
+//    static String stare;
     public static void main(String[] args) {
-//        List<String> documente=new ArrayList<>(5);
-//        documente.add("A");
-//        documente.add("B");
-        List<Ghiseu> ghiseusList=new ArrayList<>(4);
-        ghiseusList.add(new Ghiseu("ghiseu1", Collections.singletonList("A")));
-        ghiseusList.add(new Ghiseu("ghiseu2",Collections.singletonList("B")));
-        List<Birou> birouList = new ArrayList<>(2);
-
-        birouList.add(new Birou("birou1",ghiseusList));
+        Stari stare =new Stari();
+        Client c =new Client("A",stare);
+        Client c1 =new Client("A",stare);
+        c.start();
+        c1.start();
     }
+
+//    static void initialize(){
+//        List<String> list=new ArrayList<>();
+//        list.add("B");list.add("C");
+//        listHashMap.put("A",list);
+//        list = new ArrayList<>();
+//        listHashMap.put("B",list);
+//        list = new ArrayList<>();
+//        list.add("D");
+//        listHashMap.put("C",list);
+//        list = new ArrayList<>();
+//        listHashMap.put("D",list);
+//    }
 }

@@ -1,15 +1,49 @@
 package com.company;
 
-import java.util.List;
+public class Client extends Thread{
+    private String stare;
+    Stari st;
+    public Client(String stare,Stari st){
+        this.stare = stare;
+        this.st= st;
+    }
 
-public class Client extends Thread {
-   private List<String> documente;
-   public Client(List<String> documente){
-       this.documente = documente;
-   }
-   public void run(){
-       Config c = new Config();
-       c.
-   }
+    @Override
+    public void run() {
+        super.run();
 
+        switch (stare){
+            case "A":
+                try {
+                    st.StareA();
+                } catch (InterruptedException e) {
+                    System.out.println("ZUZUU");
+                    e.printStackTrace();
+
+                }
+                break;
+            case "B":
+                try {
+                    st.StareB();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "C":
+                try {
+                    st.StareC();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "D":
+                try {
+                    st.StareD();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                break;
+            default:break;
+        }
+    }
 }
